@@ -1,4 +1,4 @@
-function getComputerChoice {
+function getComputerChoice () {
     let num = Math.random();
     if (num < 0.33) {
         return "rock";
@@ -7,3 +7,10 @@ function getComputerChoice {
     }
     return "scissors";
 }
+
+function getHumanChoice() {
+    let choice = prompt('Choose "rock", "paper", or "scissors":');
+    return choice;
+}
+
+console.log(getHumanChoice())
