@@ -22,11 +22,13 @@ function playGame() {
         if (humanChoice === computerChoice) {
             humanScore++;
             computerScore++;
-            console.log('It\'s a tie! You and the computer chose '
-                + humanChoice[0].toUpperCase
-                + humanChoice.slice(1).toLowerCase()
-                + '!');
-            return;
+            if (humanChoice === 'rock') {
+                console.log('It\'s a tie! You and the computer chose Rock!');
+            } else if (humanChoice === 'paper') {
+                console.log('It\'s a tie! You and the computer chose Paper!');
+            } else if (humanChoice === 'scissors') {
+                console.log('It\'s a tie! You and the computer chose Scissors!');
+            }
         } else if (humanChoice === 'rock') {
             if (computerChoice === 'paper') {
                 computerScore++;
@@ -62,7 +64,7 @@ function playGame() {
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
     }
+    return "Your score: " + humanScore + "\nComputer score: " + computerScore;
 }
 
-
-
+console.log(playGame());
