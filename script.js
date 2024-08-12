@@ -25,38 +25,38 @@ function playGame() {
             humanScore++;
             computerScore++;
             if (humanChoice === 'rock') {
-                console.log('It\'s a tie! You and the computer chose Rock!');
+                results.textContent = 'It\'s a tie! You and the computer chose Rock!';
             } else if (humanChoice === 'paper') {
-                console.log('It\'s a tie! You and the computer chose Paper!');
+                results.textContent = 'It\'s a tie! You and the computer chose Paper!';
             } else if (humanChoice === 'scissors') {
-                console.log('It\'s a tie! You and the computer chose Scissors!');
+                results.textContent = 'It\'s a tie! You and the computer chose Scissors!';
             }
         } else if (humanChoice === 'rock') {
             if (computerChoice === 'paper') {
                 computerScore++;
-                console.log('You lose! Paper beats Rock');
+                results.textContent = 'You lose! Paper beats Rock';
                 return;
             }
             humanScore++;
-            console.log('You win! Rock beats Scissors');
+            console('You win! Rock beats Scissors');
             return;
         } else if (humanChoice === 'paper') {
             if (computerChoice === 'rock') {
                 humanScore++;
-                console.log('You win! Paper beats Rock');
+                results.textContent = 'You win! Paper beats Rock';
                 return;
             }
             computerScore++;
-            console.log('You lose! Scissors beats Paper');
+            results.textContent = 'You lose! Scissors beats Paper';
             return;
         } else if (humanChoice === 'scissors') {
             if (computerChoice === 'rock') {
                 computerScore++;
-                console.log('You lose! Rock beats Scissors');
+                results.textContent = 'You lose! Rock beats Scissors';
                 return;
             }
             humanScore++;
-            console.log('You win! Scissors beats Paper');
+            results.textContent = 'You win! Scissors beats Paper';
             return;
         } 
     }
@@ -78,4 +78,4 @@ function playGame() {
     return "Your score: " + humanScore + "\nComputer score: " + computerScore;
 }
 
-console.log(playGame());
+results.textContent = playGame();
